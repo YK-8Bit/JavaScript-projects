@@ -18,9 +18,23 @@ const updateClock = () => {
     let hour = current.getHours(); //storing the current hour inside of hour variable 
     let min = current.getMinutes(); //storing the current minutes inside of min variable 
     let sec = current.getSeconds(); //storing the current seconds inside of sec variable
+    let period = ""; //empty string that will contain AM or PM
 
-    clock.textContent = hour + ":" + min + ":" + sec; //setting the text content and combining them together 
+    //logic for AM and PM
+    if(hour >= 12){
+        period = "PM"; //so if the time is directly on 12 or above then its PM
+    }else{
+        period = "AM"; //so if the time is less than 12 then its AM
+    }
 
+    //conversion to 12 hour
+    if(hour === 0){
+        hour = 12; //if its midnight on a 24 hour clock the its 12 on 12 hour clock
+    }else if(hour > 12){
+        hour = hour - 12; //if the hour is greater than 12 then we should subtract 12 from it to get it to 12 hour format
+    }
+
+    clock.textContent = hour + ":" + min + ":" + sec + " " +  period; //setting the text content and combining them together
 }
  
 updateClock() //runs the function so that it displays
