@@ -1,0 +1,92 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+.container{
+    position: relative;
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+
+.title{
+    margin-top: 40px;
+}
+
+.container .title h1{
+  font-family: 'Orbitron', monospace;
+  color: greenyellow;
+}
+
+
+.theme{
+    position: absolute;
+    top: 65%;
+    color: greenyellow;   
+}
+
+#themeToggle{
+    padding: 20px;
+    background-color: black;
+    font-size: large;    
+    border-radius: 20px;
+    outline: 2px solid greenyellow;
+    cursor: pointer;
+}
+
+#clock{
+    color: yellowgreen;
+    font-family: 'Orbitron', monospace;
+    margin-top: 90px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* this section is for the light version */
+
+.container.light{
+    position: relative;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    color: black;
+    outline: 2px solid black;
+}
+
+.theme.light{
+    position: absolute;
+    top: 65%;
+    color: white;
+    cursor: pointer;
+   
+}
+
+#themeToggle.light{
+    padding: 20px;
+    background-color: white;
+    font-size: large;    
+    border-radius: 20px;
+    outline: 2px solid black;
+}
+
+.container.light .title h1{
+  font-family: 'Orbitron', monospace;
+  color: black;
+}
+
+#clock.light{
+    color: black;
+    font-family: 'Orbitron', monospace;
+    margin-top: 90px;
+    font-size: 40px;
+    font-weight: bold;
+}
