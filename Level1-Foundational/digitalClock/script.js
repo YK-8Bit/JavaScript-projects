@@ -34,7 +34,13 @@ const updateClock = () => {
         hour = hour - 12; //if the hour is greater than 12 then we should subtract 12 from it to get it to 12 hour format
     }
 
-    clock.textContent = hour + ":" + min + ":" + sec + " " +  period; //setting the text content and combining them together
+    //comversion to string so we can use pad start
+
+    let hourStr =hour.toString().padStart(2, "0");//if number is less than 2 digits add a 0
+    let minStr = min.toString().padStart(2, "0");//if number is less than 2 digits add a 0
+    let secStr = sec.toString().padStart(2, "0");//if number is less than 2 digits add a 0
+
+    clock.textContent = hourStr + ":" + minStr + ":" + secStr + " " +  period; //setting the text content and combining them together
 }
  
 updateClock() //runs the function so that it displays
