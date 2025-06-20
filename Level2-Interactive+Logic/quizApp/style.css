@@ -1,0 +1,83 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    background-image: url(images/map.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height:600px;
+    width: 500px;
+    color: rgb(232, 232, 6);
+    position: relative;
+    font-family: sans-serif;
+    border-radius: 40px;
+    border:  6px yellow solid;
+}
+
+.container button{
+    width: 140px;
+    height: 50px;
+    margin-top: 280px;
+    border-radius: 20px;
+    background-color: rgb(232, 232, 6);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: blue;
+    cursor:pointer;
+}
+
+#score{
+   position: absolute; 
+   color: rgb(232, 232, 6);
+   top: 60px;
+   left:10px;
+   font-family: sans-serif;
+}
+
+.image{
+    margin-top: 100px;
+}
+
+#flagImage{
+    border: yellow 2px solid;
+    width: 50%;
+    max-width: 200px;
+    max-height: 200px;
+    height: 100px;
+}
+.background{
+    background-color: yellow;
+    width: 400px;
+    height: 170px;
+    position: absolute;
+    top: 300px;
+    border-radius: 20px;
+    color: black;
+    left: 35px;
+    font-family: sans-serif;
+    padding: 20px;
+    font-size: 20px;
+}
+.background ul{
+    text-decoration: none;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#questionText{
+ font-family: 'Poppins', sans-serif;
+ font-weight: bold;
+ color: black;
+}
+
