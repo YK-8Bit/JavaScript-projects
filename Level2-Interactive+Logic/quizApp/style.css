@@ -68,6 +68,7 @@ body{
     font-family: sans-serif;
     padding: 20px;
     font-size: 20px;
+    border: black 5px solid;
 }
 .background ul{
     text-decoration: none;
@@ -81,3 +82,14 @@ body{
  color: black;
 }
 
+ul li{
+    cursor: pointer;
+}
+
+.wrong{
+    color: red;
+}
+
+.correct{
+    color: green;
+}
