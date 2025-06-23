@@ -3,6 +3,10 @@ const score = document.getElementById("score");
 const nextBtn = document.getElementById("nextBtn");
 const questionText = document.getElementById("questionText");
 const optionList = document.querySelector("ul");
+const overlay = document.getElementById("overlay")
+const modal = document.getElementById("modal")
+const resetBtn = document.getElementById("closeReset")
+const finalScore = document.getElementById("finalScore");
 
 const questionsData = [ //this is the questiions placed in an obect array
     {
@@ -36,7 +40,7 @@ const questionsData = [ //this is the questiions placed in an obect array
         correct: "switzerland"
     },
      {
-        flag: "images/UL.webp",
+        flag: "images/ul.webp",
         question: "What country does this flag belong to?",
         options: ["switzerland", "United Kingdom", "Pakistan", "Russia"],
         correct: "United Kingdom"
@@ -49,10 +53,22 @@ let scoreCount = 0;//score count is 0
 nextBtn.addEventListener("click", () => {
     questionIndex++ //increasiing the index by 1 each time the button is clicked
     
-    if(questionIndex >= questionsData.length){ //if the question index (0-5) is greater than or equal to 6 
-            alert("Your score is " + scoreCount);
-        }
+    if(questionIndex >= questionsData.length){ //if the question index is greater than or equal to 6 
+        finalScore.textContent = "Your Score Is: " + scoreCount;
+        modal.classList.remove("hidden"); //show  the modal popup
+        overlay.classList.remove("hidden"); //show the overlay
 
+        resetBtn.addEventListener("click", () => {
+            modal.classList.add("hidden"); //hides  the modal popup
+            overlay.classList.add("hidden"); //hides the overlay
+            questionIndex = 0; //resets the question index
+            scoreCount  = 0; //resets the score
+            score.textContent = "Score: " + scoreCount;//updated format
+            displayQuestion();//runs the function again
+        })
+        
+        }
+    
     displayQuestion();
 })
 
