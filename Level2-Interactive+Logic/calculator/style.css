@@ -110,7 +110,7 @@ color: black;
 }
 
 #backspace{
-    background-image: url(/images/OIP.png);
+    background-image: url(images/back.png);
     background-size: 60px 60px;
     background-position: center;
     background-color: #f39c12;

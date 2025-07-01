@@ -25,7 +25,7 @@ buttons.forEach(button => { //LOOPING THROUGH EACH BUTTON ELEMENT AND RUNNING A 
         else{
             expression = expression + value;//adding the new number/operator to the curreent expression 
         }
-
+        
         questionDisplay.value = expression; //displaying the expression inside of the question display
     })
 
