@@ -2,7 +2,7 @@ const answerDisplay = document.getElementById("answerDisplay");
 const questionDisplay = document.getElementById("questionDisplay");
 const buttons = document.querySelectorAll("button");
 const equalButton = document.getElementById("equal");
-
+const backspace = document.getElementById("backspace");
 
 //tracking the expression
 let expression = ""; //expression variable refers to  the math sentnence 
@@ -31,5 +31,10 @@ buttons.forEach(button => { //LOOPING THROUGH EACH BUTTON ELEMENT AND RUNNING A 
 
 });  
 
-
+ //backspace button code
+backspace.addEventListener("click", () => {
+    expression = expression.slice(0, -1);//removes the last character from string and updates the current string
+    questionDisplay.value = expression;//updates whats in the question 
+    answerDisplay.value = "";  //removes the value inside of the answer box
+});
 

@@ -91,7 +91,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 30px;
-    margin-top: 60px;
+    margin-top: 30px;
     justify-content: center;
 }
 
@@ -107,4 +107,13 @@ body{
 #clear{
 background-color: #f39c12;
 color: black;
+}
+
+#backspace{
+    background-image: url(/images/OIP.png);
+    background-size: 60px 60px;
+    background-position: center;
+    background-color: #f39c12;
+    color: black;
+    background-repeat: no-repeat;
 }
