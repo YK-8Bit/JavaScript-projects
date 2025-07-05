@@ -23,7 +23,7 @@ body{
 }
 
 .card{
-    width: 300px;
+    width: 250px;
     height: 300px;
     position: relative;
     cursor: pointer;
@@ -41,13 +41,13 @@ body{
 }
 
 .card .back{
-    transform: rotateY(180deg); /*starts off flipped*/
+    transform: rotateX(180deg); /*starts off flipped*/
 }
 
 .card.flipped .front{
-    transform: rotateY(180deg); /*when we click on the image the flipped class gets added and the front turns taking it off  the screen*/
+    transform: rotateX(180deg); /*when we click on the image the flipped class gets added and the front turns taking it off  the screen*/
 }
 
 .card.flipped .back{
-    transform: rotateY(0deg); /*when we click on the image the flipped class gets added and the back flips over to reveal the image*/
+    transform: rotateX(0deg); /*when we click on the image the flipped class gets added and the back flips over to reveal the image*/
 }
