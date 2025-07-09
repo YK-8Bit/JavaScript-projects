@@ -16,9 +16,18 @@ shuffle(cards) //running shuffle with the array cards
 
 cards.forEach(card => container.appendChild(card))//we need to reappend the cards into the container
 
-for(let i = 0; i < cards.length; i++){ //loops through each element
-    cards[i].addEventListener("click", () => { //liistens for a click on the  card
-        cards[i].classList.toggle("flipped"); //adds a flipped class to the element that gets clicked 
-    });
-}
+
+//matching logic
+
+let flippedCards = [];
+
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        //do nothiing if the card is already flipped or if theres 2 cards  in the array
+        if(card.classList.contains("flipped")|| flippedCards.length === 2){
+            return;
+        }
+    })
+})
+
 
