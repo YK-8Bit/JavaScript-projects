@@ -27,6 +27,25 @@ cards.forEach(card => {
         if(card.classList.contains("flipped")|| flippedCards.length === 2){
             return;
         }
+
+        card.classList.add("flipped");//flip the card if clicked
+        flippedCards.push(card);//put the clicked card into the array
+
+
+        if(flippedCards.length === 2){
+            let card1 = flippedCards[0]; //make the first  item in the array card 1
+            let card2 = flippedCards[1]; //make the second  item in the array card 2
+
+            if(card1.dataset.animalType === card2.dataset.animalType){
+                flippedCards = []; //if the dataset matches then keep everythin the way it is but reset the array
+            }else{
+                setTimeout(() => {
+                    card1.classList.remove("flipped");
+                    card2.classList.remove("flipped");
+                    flippedCards = [];//reset the array
+                },1000)
+            }  
+        }
     })
 })
 
