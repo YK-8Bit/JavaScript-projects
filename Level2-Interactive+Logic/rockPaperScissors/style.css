@@ -8,6 +8,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    user-select: none;
 }
 
 .container{
@@ -63,12 +64,12 @@ body{
     opacity: 1;
     visibility: visible;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     transition: transform 0.5s;
     transform: translateY(-100px);
-    margin-top: 50px;
+    margin-top: -50px;
 }
 
 #startButton.clicked{
@@ -83,6 +84,15 @@ body{
   border-radius: 12px;
   padding: 8px;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+#userInterface button.selected{
+     border: 4px solid #e64a19;
+}
+
+#userInterface button:hover {
+  outline: 4px solid #e64a19;
 }
 
 #userInterface button img {
@@ -90,3 +100,24 @@ body{
   height: 80px;
   display: block;
 }
+
+#userInterface .text{
+    text-align: center;
+}
+
+#userInterface h2{
+    font-size: 30px;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#countdown{
+    margin-top:  0px;
+}
+
