@@ -3,7 +3,10 @@ const userInterface = document.getElementById("userInterface");
 const countDown = document.getElementById("countdown");
 const title = document.getElementById("title"); 
 const optionButtons = document.querySelectorAll(".option")
-
+const overlay = document.getElementById("overlay");
+const gameResult = document.querySelector(".gameResult");
+const result = document.getElementById("result");
+const gameRestart = document.getElementById("gameRestart");
 
 //making the start page elements dissapear and starting countdown  
 startButton.addEventListener("click", () => {
@@ -11,7 +14,8 @@ startButton.addEventListener("click", () => {
     userInterface.classList.add("show");
     title.classList.add("move");
 
-    let userChoice = ""; 
+    let userChoice = "";
+    
 
         optionButtons.forEach((button) => { //loops through each button
             button.addEventListener("click", () => {
@@ -50,14 +54,23 @@ startButton.addEventListener("click", () => {
 
             if(computerChoice === userChoice){
                 console.log("its a draw"); //(placeholder)
+                overlay.classList.add("showit");
+                gameResult.classList.add("showit");
+                result.textContent = "Its A Draw!"
             }else if(
                 (computerChoice === "rock" && userChoice === "scissors") ||
                 (computerChoice === "paper" && userChoice === "rock") ||
                 (computerChoice === "scissors" && userChoice === "paper")
             ){
                 console.log("computer won"); //(placeholder)
+                overlay.classList.add("showit");
+                gameResult.classList.add("showit");
+                result.textContent = "You Loose!"
             }else{
                 console.log("You win"); //(placeholder)
+                overlay.classList.add("showit");
+                gameResult.classList.add("showit");
+                result.textContent = "You Win!"
             }
         }
 
