@@ -47,6 +47,13 @@ startButton.addEventListener("click", () => {
         if(count === 0){ 
             clearInterval(interval);//stops it from running
             
+            if(userChoice === ""){
+                overlay.classList.add("showit");
+                gameResult.classList.add("showit");
+                result.textContent = "Please select an answer"
+                return;
+            }
+
             //game logic
             const options = ["rock", "paper", "scissors"]; //these are the options that the computer will be using
             const randomIndex = Math.floor(Math.random() * 3);//creates a random  number between 0 and 2 since theres indexes from 0,1,2
@@ -74,7 +81,12 @@ startButton.addEventListener("click", () => {
             }
         }
 
+
     },1000)
+
+    gameRestart.addEventListener("click", () => {
+            window.location.reload()
+        })
 })
 
 
