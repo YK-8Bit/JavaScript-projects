@@ -6,25 +6,35 @@
     <title>ClimaCast</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/climacast.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="images/climacast.png" alt="ClimaCast logo">
-        </div>
 
         <nav>
+        <a href="/" class="logo">
+            <img src="images/climacast.png" alt="ClimaCast logo">
+        </a>
+
             <a href="">Home</a>
             <a href="">Contact</a>
             <a href="">Prices</a>
 
-            <button id="themetoggle"></button>
+            <button id="themetoggle" aria-label="Toggle theme">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                </svg>
+            </button>
+
             
             <input type="text" placeholder="Search Location">
         </nav>
 
         <section class="information">
-
+            <div class="image-wrapper">
+            <img src="images/assets_task_01k0w6wfxmf2eaycdnt0cmmk40_1753293436_img_1.webp" alt="fake image of the aurora borealis">
+            </div>
         </section>
 
         <section class="extrainformation">
@@ -43,4 +53,6 @@
 </body>
 <script src="script.js"></script>
 </html>
+
+
 
