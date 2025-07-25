@@ -99,3 +99,55 @@ nav button:hover {
     border-radius: 20px; 
 }
 
+.extra-information{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: -40px;
+  
+}
+
+#todayBtn{
+  color: #4a00e0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;;
+}
+
+#weeklyBtn{
+  color: #4a00e0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;;
+}
+
+.selected-button::after{
+  content: '';
+  position: absolute; 
+  bottom: 0;
+  left: 35%;
+  height: 3px;
+  background-color: #4a00e0;
+  width: 40px;
+}
+
