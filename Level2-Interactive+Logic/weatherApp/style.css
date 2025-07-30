@@ -167,14 +167,16 @@ nav form {
 
 .left-side{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
-
+  top: 17%;
+  left: 20%;
+  width: 60%;
 }
 
 .card{
-  background-color: #a386ff;
+  background: linear-gradient(to bottom right, #8e2de2, #4a00e0);
   width: 300px;
   height: 300px;
   color: white;
@@ -191,6 +193,7 @@ nav form {
 .card img{
   width: 80px;
   height: 80px;
+  display: none;
 }
 
 #currentcelsius {
@@ -205,8 +208,15 @@ nav form {
     opacity: 0.8;
 }
 
+.details-wrapper{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+}
+
 .right-side {
-    margin-bottom: 25px; 
+    margin-top: -30px;
 }
 
 .right-side h1 { 
@@ -232,4 +242,11 @@ nav form {
 .details-wrapper h3,
 .details-wrapper p {
     color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.weatherinfo{
+   align-self: flex-start;
+  
+
 }
