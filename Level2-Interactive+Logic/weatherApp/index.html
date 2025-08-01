@@ -28,30 +28,32 @@
             </button>
 
             
-            <form><input type="text" placeholder="Search Location"></form>
+            <form><input id="searchbar"type="text" placeholder="Search Location"></form>
         </nav>
 
         <section class="information">
     <div class="image-wrapper">
         <img src="images/assets_task_01k0w6wfxmf2eaycdnt0cmmk40_1753293436_img_1.webp" alt="fake image of the aurora borealis">
 
-        <div class="left-side">
-            <div class="card">
-                <img id="weather-icon" src="" alt="Weather icon"/>
+        <div  class="details-container">
+            <div class="left-side">
+                <div class="card">
+                <img id="weather-icon" src="/images/climacast.png" alt="Weather icon"/>
                 <h1 id="currentcelsius">--°C</h1>
                 <p id="feelslike">Feels like --°C</p>
+                <p  id="condition">Current Condition</p>
+            </div>
             </div>
 
-            <div class="details-wrapper"> 
-                <div class="right-side">
-                    <h1 id="areaname">Loading location...</h1>
-                    <h2 id="date">Loading date...</h2>
-                    <h3 id="lastupdate">Loading update time...</h3>
-                </div>
+            <div class="right-side">
 
-                <div class="weatherinfo">
-                    <p id="wind">Wind: -- km</p>
-                    <p id="rain">Rain: --%</p>
+                    <h1 id="areaname">Loading location...</h1>
+                    <h2 id="date">Loading local date/time...</h2>
+                    <h3 id="lastupdate">Loading update time...</h3>
+
+                <div class="weather-info">
+                    <p id="wind">Wind: -- mph</p>
+                    <p id="rain">Rain: --mm</p>
                 </div>
             </div>
         </div>
