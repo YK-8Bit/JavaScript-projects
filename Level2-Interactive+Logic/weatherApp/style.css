@@ -31,6 +31,7 @@ nav{
     position: sticky;
     top: 0px;
     user-select: none;
+    z-index: 1;
 }
 
 nav a{
@@ -111,6 +112,8 @@ nav button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  margin-top: -40px;
 }
 
 .title{
@@ -242,4 +245,48 @@ nav form {
 .details-container p {
     color: white;
     font-family: 'Poppins', sans-serif;
+}
+
+.card-slider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.arrow-btn{
+  font-size: 2rem;
+  background: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: white;
+}
+
+.cards-container{
+  display: flex;
+  width: 80vw;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding: 10px;
+  overflow-x: auto;
+  overflow: hidden;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;   
+    padding: 45px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px; 
+    height: 150px;
+    background: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
 }
