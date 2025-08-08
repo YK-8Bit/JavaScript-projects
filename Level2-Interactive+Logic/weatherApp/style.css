@@ -290,3 +290,36 @@ nav form {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
 }
+
+#weeklyCardsContainer{
+  display: none;
+}
+
+.weekly-cards-container{
+  display: flex;
+  width: 80vw;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding: 10px;
+  overflow-x: auto;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.daycard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;   
+    padding: 45px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px; 
+    height: 150px;
+    background: linear-gradient(to bottom right, #8e2de2, #4a00e0);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+}

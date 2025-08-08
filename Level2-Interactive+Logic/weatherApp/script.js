@@ -5,12 +5,14 @@ todayBtn.addEventListener("click", () => {
     todayBtn.classList.add("selected-button"); //adds the underline effect
     weeklyBtn.classList.remove("selected-button"); //removes the underline effect
     cardContainer.style.display = "flex"; //displays the hour cards
+    weeklyCardsContainer.style.display = "none";
 });
 
 weeklyBtn.addEventListener("click", () => {
     weeklyBtn.classList.add("selected-button");//adds the underline effect
     todayBtn.classList.remove("selected-button")//removes the underline effect
     cardContainer.style.display = "none"; //removes the hour cards
+    weeklyCardsContainer.style.display = "flex";
 })
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,6 +33,7 @@ const condition = document.getElementById("condition");
 const scrollLeft = document.getElementById("leftArrow");
 const scrollRight = document.getElementById("rightArrow")
 const cardContainer = document.getElementById("cardsContainer");
+const weeklyCardsContainer = document.getElementById("weeklyCardsContainer");
 
 
 scrollLeft.addEventListener("click", () => {
@@ -49,8 +52,16 @@ form.addEventListener("submit", (e) => {
 })
 
 getWeather = async () => {
+
+   try{
+
     const searchbarValue = searchbar.value
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?&key=${apiKey}&q=${searchbarValue}&days=1`);//returns a response object
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?&key=${apiKey}&q=${searchbarValue}&days=3`);//returns a response object
+
+    if(!response.ok){
+        throw new Error(`HTTP error has occured! status: ${response.status}`)
+    }
+
     const data = await response.json(); //converts the response object into real data
 
     console.log(data);//logs the data into the console
@@ -89,8 +100,43 @@ getWeather = async () => {
         card.appendChild(temp);
 
         cardContainer.appendChild(card);
+
     })
 
+    //weekly
+    weeklyCardsContainer.innerHTML = "";
+    const weeklyArray = data.forecast.forecastday; //array of 7 days 
+
+    weeklyArray.forEach(day => {
+        const dayCard = document.createElement("div");
+        dayCard.className = "daycard";
+
+        const icon = document.createElement("img");
+        icon.src = "https:" + day.day.condition.icon;
+
+        const dateEl = document.createElement("p");
+        dateEl.textContent = day.date;
+
+        const maxTemp = document.createElement("p");
+        maxTemp.textContent = "Max: " + day.day.maxtemp_c + "°C";
+
+        const minTemp = document.createElement("p");
+        minTemp.textContent = "Min: " + day.day.mintemp_c + "°C";
+
+        dayCard.appendChild(icon);
+        dayCard.appendChild(dateEl);
+        dayCard.appendChild(maxTemp);
+        dayCard.appendChild(minTemp);
+
+        weeklyCardsContainer.appendChild(dayCard);
+    })
+
+   } catch(error){
+    console.error(error.message)
+    alert("Sorry but an error has occured. Please try again");
+    weeklyCardsContainer.innerHTML = "";
+    cardContainer.innerHTML = "";
+   }
 
 }
 
